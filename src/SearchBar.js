@@ -7,7 +7,7 @@ class SearchBar extends React.Component {
       <Container>
         <form> 
           <input type = "text" onInput={(event)=>{this.props.handleCityInput(event.target.value)}}></input>
-          <button onClick={this.props.handleGetData}>Explore!</button>
+          <button onClick={this.props.getCityData}>Explore!</button>
         </form>
       </Container>
     );

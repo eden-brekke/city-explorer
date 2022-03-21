@@ -21,7 +21,7 @@ class Main extends React.Component {
     event.preventDefault();
 
     try {
-      let cityRequest = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q={this.state.query}&format=json`
+      let cityRequest = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.query}&format=json`
       let cityData = await axios.get(cityRequest);
       this.setState({
         cityData: cityData.data[0],
@@ -43,6 +43,7 @@ class Main extends React.Component {
 
   render() {
     console.log(this.state);
+    console.log(this.cityData);
   return (
       <>
       {this.state.error ? (
@@ -51,7 +52,7 @@ class Main extends React.Component {
         <Container>
           <SearchBar handleCityInput={this.handleCityInput}
           getCityData={this.getCityData} />
-        <Image cityData={`https://map.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${this.state.cityData.lat},{this.state.cityData.lon}%zoom=13`}
+        <Image cityData={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${this.state.cityData.lat},${this.state.cityData.lon}&zoom=13`}
         />
         </Container>
       )}
