@@ -31,26 +31,26 @@ Estimate of time needed to complete: __30m___
 
 Start time: __2:50p___
 
-Finish time: _____
+Finish time: __3:05p___
 
-Actual time needed to complete: _____
+Actual time needed to complete: __15m___
 
 
 Name of feature: _______________Deploy to Netlify_________________
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: __5m___
 
-Start time: _____
+Start time: __3:05p___
 
-Finish time: _____
+Finish time: ___3:06p__
 
-Actual time needed to complete: _____
+Actual time needed to complete: __1m___
 
-Name of feature: ________________________________
+Name of feature: _________________Build A form to Collect a City name from the user Give Submit Button "Explore!"_______________
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: __1hr___
 
-Start time: _____
+Start time: __3:11p___
 
 Finish time: _____
 
