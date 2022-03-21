@@ -3,7 +3,7 @@ import axios from 'axios';
 import SearchBar from './SearchBar';
 import Container from 'react-bootstrap/Container';
 import Image from './Image';
-
+import Groups from './Groups';
 
 class Main extends React.Component {
   constructor(props) {
@@ -52,6 +52,9 @@ class Main extends React.Component {
         <Container>
           <SearchBar handleCityInput={this.handleCityInput}
           getCityData={this.getCityData} />
+        <Container>
+          <Groups searchResults={this.state.searchResults}/>
+        </Container>
         <Image cityData={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${this.state.cityData.lat},${this.state.cityData.lon}&zoom=13`}
         />
         </Container>
