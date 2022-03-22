@@ -1,23 +1,35 @@
 import React from 'react';
 import axios from 'axios';
-import SearchBar from './SearchBar';
+import SearchBar from '../searchbar/SearchBar';
 import Container from 'react-bootstrap/Container';
-import Image from './Image';
-import Groups from './Groups';
+// import Image from '../image/Image';
+// import Groups from '../groups/Groups';
 import './Main.css'
+import Errormodal from '../errormodal/Errormodal';
+import CityDisplay from '../citydisplay/CityDisplay';
 
 class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       query: '',
-      searchResults: [],
-      cityData: {},
+      // searchResults: [],
+      cityData: [],
       error: false,
-      errorMessage: ''
+      errorMessage: '',
+      showModal: false,
     }
   }
-
+  hideModal= () => {
+    this.setState({
+      showModal: false,
+    })
+  }
+  showModal = () => {
+    this.setState({
+      showModal: true,
+    })
+  }
   getCityData = async (event) => {
     event.preventDefault();
 
@@ -25,13 +37,14 @@ class Main extends React.Component {
       let cityRequest = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.query}&format=json`
       let cityData = await axios.get(cityRequest);
       this.setState({
-        cityData: cityData.data[0],
-        searchResults: cityData.data,
+        cityData: cityData.data,
+        // searchResults: cityData.data,
       });
     } catch (event) {
       console.log('Error: ', event.response);
       this.setState({
         error: true,
+        showModal: true,
         errorMessage: `An Error Occurred ${event.response.status}, ${event.response.data}`,
       });
     }
@@ -43,9 +56,17 @@ class Main extends React.Component {
   }
 
   render() {
-    console.log(this.state);
-    console.log(this.cityData);
-    console.log(this.state.query);
+    let cityResults = this.state.cityData.map((city, index) => {
+      console.log(index)
+      return(
+      <CityDisplay 
+  
+      key={index}
+      city={city}
+      />
+      );
+    }
+  );
   return (
       <>
       {this.state.error ? (
@@ -54,13 +75,22 @@ class Main extends React.Component {
         <Container style={{justifyContent: "center"}}>
           <SearchBar handleCityInput={this.handleCityInput}
           getCityData={this.getCityData} />
-        <Container>
+        {/* <Container>
           <Groups searchResults={this.state.searchResults}/>
-        </Container>
-        <Image cityData={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${this.state.cityData.lat},${this.state.cityData.lon}&zoom=13`}
-        />
+        </Container> */}
+       
         </Container>
       )}
+      <main>
+        {cityResults}
+      </main>
+      <Errormodal 
+        error={this.state.error}
+        errorMessage={this.state.errorMessage}
+        modalState={this.state.showModal}
+        showModal={this.showModal}
+        hideModal={this.hideModal}
+      />
       </>
     )
   }
