@@ -52,6 +52,24 @@ Estimate of time needed to complete: __1hr___
 
 Start time: __3:11p___
 
-Finish time: _____
+Finish time: __4:10p___
 
-Actual time needed to complete: _____
+Actual time needed to complete: __1hr___
+
+Name of feature: _____________Add Map__________
+Estimate of time needed to complete: __1hr__
+Start Time: __4:10p__
+Finish Time: __4:50p__
+Actual time needed to complete: __40m__
+
+Name of Feature: _________Get Search Object to display____
+Estimate of time needed to complete: __1hr__
+Start Time: __4:50p__
+Finish Time: ____
+Actual Time needed to complete: ____
+
+Name of Feature: ______Style it all___
+Estimate of time needed to complete: __2hr__
+Start Time: ____
+Finish Time: ____
+Actual Time Needed to Complete: ____
