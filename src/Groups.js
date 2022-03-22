@@ -4,6 +4,7 @@ import Col from 'react-bootstrap/Col';
 import CityDisplay from './CityDisplay';
 
 class Groups extends React.Component {
+
   render() {
     let cityFilter = this.props.searchResults.slice(0, -1);
     return (

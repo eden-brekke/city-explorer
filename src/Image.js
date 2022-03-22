@@ -1,9 +1,15 @@
 import React from 'react';
+import './Image.css';
 
 class Image extends React.Component {
   render() {
     return (
-      <img style={{width: '80%'}} src={this.props.cityData} alt="text"></img>
+      <>
+      <div className = "map-container">
+       <h3 className="map-header">Searched City Map</h3>
+      <img className ="map"  src={this.props.cityData} alt="text"></img>
+      </div>
+      </>
     )
   }
 }

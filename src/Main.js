@@ -4,6 +4,7 @@ import SearchBar from './SearchBar';
 import Container from 'react-bootstrap/Container';
 import Image from './Image';
 import Groups from './Groups';
+import './Main.css'
 
 class Main extends React.Component {
   constructor(props) {
@@ -44,12 +45,13 @@ class Main extends React.Component {
   render() {
     console.log(this.state);
     console.log(this.cityData);
+    console.log(this.state.query);
   return (
       <>
       {this.state.error ? (
         <p>{this.state.errorMessage}</p>
       ) : (
-        <Container>
+        <Container style={{justifyContent: "center"}}>
           <SearchBar handleCityInput={this.handleCityInput}
           getCityData={this.getCityData} />
         <Container>
