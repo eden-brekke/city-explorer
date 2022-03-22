@@ -23,7 +23,7 @@ React, APIs, Javascript
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 
 ## Link to WRRC Day 1 
-[WRRC]!(lab6WRRC.png)
+![WRRC](lab6WRRC.png)
 
 Name of feature: _____________Set up Repo/Create the file/Fill out README___________________
 
