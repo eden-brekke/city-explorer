@@ -1,0 +1,13 @@
+.map-container {
+  position: relative;
+}
+.map-header {
+  float: left;
+  position: relative;
+}
+.map {
+  position: relative;
+  border: 3px double #081C15;
+  padding: 5px;
+  background-color: #B7E4C7;
+}

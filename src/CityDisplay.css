@@ -1,0 +1,17 @@
+.card-Div {
+  height: 18vw;
+  display: flex;
+  float: left;
+  justify-content: center;
+}
+
+.h-100 {
+  display:inherit;
+  border: 1px solid #081C15;
+  background: linear-gradient(#95D5B2,#fadde1);
+  width: 16rem;
+  overflow: auto;
+  margin: 10px;
+  text-align: center;
+  padding: 20px;
+}

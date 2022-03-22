@@ -1,0 +1,6 @@
+.foot {
+  border: 3px double #081C15;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(#D8F3DC, #B7E4C7, #95D5B2, #74C69D);
+}
