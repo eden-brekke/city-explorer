@@ -7,7 +7,7 @@ class Footer extends React.Component {
       <>
         <div className = "foot">
         <h3>&copy;copyright</h3>
-        <p>Eden Brekke</p>
+        <p className='footp'>Eden Brekke</p>
         </div>
       </>
     );

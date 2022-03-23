@@ -2,11 +2,13 @@ import React from 'react';
 import axios from 'axios';
 import SearchBar from '../searchbar/SearchBar';
 import Container from 'react-bootstrap/Container';
+import 'bootstrap/dist/css/bootstrap.min.css';
 // import Image from '../image/Image';
 // import Groups from '../groups/Groups';
 import './Main.css'
 import Errormodal from '../errormodal/Errormodal';
 import CityDisplay from '../citydisplay/CityDisplay';
+import Weather from '../weather/Weather';
 
 class Main extends React.Component {
   constructor(props) {
@@ -15,17 +17,27 @@ class Main extends React.Component {
       query: '',
       // searchResults: [],
       cityData: [],
+      mapurl: '',
       error: false,
       errorMessage: '',
       showModal: false,
+      weatherData: ['sunny'],
+      weatherModal: false,
     }
   }
+  hideWeatherModal = () => {
+    this.setState({
+      weatherModal: false,
+    })
+  }
+  
   hideModal= () => {
     this.setState({
       showModal: false,
+      weatherModal: false,
     })
   }
-  showModal = () => {
+  handleShowModal = () => {
     this.setState({
       showModal: true,
     })
@@ -40,13 +52,35 @@ class Main extends React.Component {
         cityData: cityData.data,
         // searchResults: cityData.data,
       });
-    } catch (event) {
-      console.log('Error: ', event.response);
+    } catch (error) {
+      console.log('Error: ', error.response);
       this.setState({
         error: true,
         showModal: true,
-        errorMessage: `An Error Occurred ${event.response.status}, ${event.response.data}`,
+        errorMessage: `An Error Occurred ${error.response.status}, ${error.response.statusText}`,
       });
+    }
+  };
+
+  getWeather = async (city) => {
+  try {
+      let weatherRequestUrl = `${process.env.REACT_APP_SERVER}/weather?city=${city}`;
+      let weatherData = await axios.get(weatherRequestUrl);
+      this.setState({
+        weatherData: weatherData.data,
+      });
+      this.setState({
+        weatherModal: true,
+      })
+      console.log(weatherData);
+    }catch (error){
+      console.log("Error response: ", error.response);
+      this.setState({
+        error: true,
+        showModal: true,
+        errorMessage: `An Error Occurred ${error.response.status}, ${error.response.statusText}`,
+      });
+      console.log(this.state.errorMessage);
     }
   };
   handleCityInput = (event) => {
@@ -57,12 +91,13 @@ class Main extends React.Component {
 
   render() {
     let cityResults = this.state.cityData.map((city, index) => {
-      console.log(index)
+      // console.log(index)
       return(
       <CityDisplay 
   
       key={index}
       city={city}
+      getWeather={this.getWeather}
       />
       );
     }
@@ -72,6 +107,7 @@ class Main extends React.Component {
       {this.state.error ? (
         <p>{this.state.errorMessage}</p>
       ) : (
+        <>
         <Container style={{justifyContent: "center"}}>
           <SearchBar handleCityInput={this.handleCityInput}
           getCityData={this.getCityData} />
@@ -80,6 +116,15 @@ class Main extends React.Component {
         </Container> */}
        
         </Container>
+        <Container>
+          <Weather
+          weatherModal={this.state.weatherModal}
+          hideWeatherModal={this.hideModal}
+          weatherData={this.state.weatherData}
+          query={this.state.query}
+          />
+        </Container>
+        </>
       )}
       <main>
         {cityResults}
@@ -88,8 +133,8 @@ class Main extends React.Component {
         error={this.state.error}
         errorMessage={this.state.errorMessage}
         modalState={this.state.showModal}
-        showModal={this.showModal}
         hideModal={this.hideModal}
+        showModal={this.handleShowModal}
       />
       </>
     )
