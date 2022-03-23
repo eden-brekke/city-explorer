@@ -7,7 +7,7 @@ class SearchBar extends React.Component {
     return (
       <Container className="search-bar">
         <form>
-          <label>Pick a City: </label>
+          <label className="search-label">Pick a City: </label>
           <input type="text" onInput={(event) => { this.props.handleCityInput(event.target.value) }} placeholder="search for a city"></input>
           <button className="search-button" onClick={this.props.getCityData}>Explore!</button>
         </form>

@@ -1,5 +1,6 @@
 import React from "react";
 import { Modal } from "react-bootstrap";
+import '../weather/Weather.css';
 
 class Errormodal extends React.Component {
 

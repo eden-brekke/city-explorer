@@ -4,4 +4,5 @@ h1 {
   font-size: 5em;
   border: 3px double #081C15;
   padding: 20px;
+  background: linear-gradient(#F1C0E8, #FFCFD2,#FDE4CF, #FBF8CC);
 }

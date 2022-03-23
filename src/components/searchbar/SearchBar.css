@@ -4,6 +4,7 @@
   border: 3px double #081C15;
   padding: 10px;
   margin: auto;
+  background: linear-gradient(#CFBAF0, #A3C4F3, #90DBF4);
 }
 .search-button {
   width: .2rem .1vw;
@@ -11,7 +12,8 @@
   outline: none;
   font-weight: bold;
   color: black;
-  background:#40916C;
+  background:#F1C0E8;
+  padding: 10px;
   cursor: pointer;
   position: relative; 
   z-index: 0;
@@ -66,4 +68,9 @@
   0% { background-position: 0 0; }
   50% { background-position: 400% 0; }
   100% { background-position: 0 0; }
+}
+
+.search-label {
+  padding: 10px;
+  font-weight: bold;
 }
