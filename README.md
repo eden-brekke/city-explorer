@@ -21,6 +21,7 @@ React, APIs, Javascript
 
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
+Tai is the best :) 
 
 ## Link to WRRC Day 1 
 ![WRRC](lab6WRRC.png)
