@@ -1,0 +1,12 @@
+.modal-body {
+  background: linear-gradient( #FDE4CF, #90DBF4,#B9FBC0);
+  font-weight: bold;
+  text-align: center;
+}
+
+.modal-head {
+  background-color: #F1C0E8;
+  font-weight: bold;
+  text-align: center;
+  justify-content: center;
+}
