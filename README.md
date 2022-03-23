@@ -23,8 +23,9 @@ React, APIs, Javascript
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 Tai is the best :) 
 
-## Link to WRRC Day 1 
-![WRRC](lab6WRRC.png)
+## Link to WRRCs
+![WRRC 1](lab6WRRC.png)
+![WRRC 2](22March2022_WRRC_withElla.png);
 
 Name of feature: _____________Set up Repo/Create the file/Fill out README___________________
 
