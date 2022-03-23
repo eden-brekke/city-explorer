@@ -12,7 +12,7 @@ class Errormodal extends React.Component {
         >
           <Modal.Header closeButton>{this.props.error}</Modal.Header>
           <Modal.Body onClick={this.props.hideModal}>
-            <p>{this.props.errorMessage}</p>
+            <p>Sorry! {this.props.errorMessage}</p>
           </Modal.Body>
         </Modal> 
       </>

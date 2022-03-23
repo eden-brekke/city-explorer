@@ -1,17 +1,25 @@
 .card-Div {
-  height: 18vw;
+  height: auto;
   display: flex;
-  float: left;
+  position: relative;
+  flex-direction: row;
+  margin: 20px;
+  align-items: center;
   justify-content: center;
 }
 
 .h-100 {
+  position: relative;
   display:inherit;
   border: 1px solid #081C15;
   background: linear-gradient(#95D5B2,#fadde1);
-  width: 16rem;
+  width: 50%;
   overflow: auto;
   margin: 10px;
   text-align: center;
   padding: 20px;
+}
+
+.card-title {
+  margin-top: 40px;
 }
