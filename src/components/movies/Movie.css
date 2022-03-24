@@ -1,0 +1,9 @@
+h3 {
+  border: 2px double #465f80;
+  background: linear-gradient(#c6eff3, #f1d3ec);
+  padding: 5px;
+}
+
+p {
+  border: 1px single #A3C4F3;
+}
