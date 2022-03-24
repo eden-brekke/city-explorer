@@ -6,7 +6,7 @@ class Footer extends React.Component {
     return (
       <>
         <div className = "foot">
-        <h3>&copy;copyright</h3>
+        <h4>&copy;copyright</h4>
         <p className='footp'>Eden Brekke</p>
         </div>
       </>
