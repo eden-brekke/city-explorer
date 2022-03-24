@@ -9,8 +9,8 @@ class Moviedata extends React.Component {
     return (
       <>
       <h3>{this.props.movie.title}</h3>
-      <p>{this.props.movie.tagline}</p>
-      <p>{this.props.movie.description}</p>
+      {/* <p>{this.props.movie.tagline}</p> */}
+      <p> Movie Synopsis:  {this.props.movie.description}</p>
       <p>Language: {this.props.movie.language}</p>
       </>
     );
