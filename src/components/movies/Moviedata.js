@@ -9,7 +9,7 @@ class Moviedata extends React.Component {
     return (
       <>
       <h3>{this.props.movie.title}</h3>
-      {/* <p>{this.props.movie.tagline}</p> */}
+      <img src={`https://image.tmdb.org/t/p/w500/${this.props.movie.imgURL}`} alt="If the Movie has a Poster"/>
       <p> Movie Synopsis:  {this.props.movie.description}</p>
       <p>Language: {this.props.movie.language}</p>
       </>

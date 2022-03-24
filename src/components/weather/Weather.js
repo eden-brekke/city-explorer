@@ -17,7 +17,7 @@ class Weather extends React.Component {
     });
       return (
     <>
-      <Modal 
+      <Modal className="modal"
       show={this.props.weatherModal}
       onClick={this.props.hideWeatherModal}
       >
