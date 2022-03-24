@@ -119,13 +119,13 @@ class Main extends React.Component {
     );
     return (
       <>
-          <main>
-            {cityResults}
-          </main>
         <Container style={{ justifyContent: "center" }}>
           <SearchBar handleCityInput={this.handleCityInput}
             getCityData={this.getCityData} />
         </Container>
+          <main>
+            {cityResults}
+          </main>
         <Container>
           <Weather
             weatherModal={this.state.weatherModal}
