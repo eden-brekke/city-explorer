@@ -24,9 +24,12 @@ React, APIs, Javascript
 Tai is the best :) 
 
 ## Link to WRRCs
+Lab 06 <br>
 ![WRRC 1](lab6WRRC.png)
-![WRRC 2](22March2022_WRRC_withElla.png);
-![WRRC 3](23March2022WRRCwithRyan.png);
+Lab 07 <br>
+![WRRC 2](22March2022_WRRC_withElla.png)
+Lab 08 <br>
+![WRRC 3](23March2022WRRCwithRyan.png)
 
 Name of feature: _____________Set up Repo/Create the file/Fill out README___________________
 
