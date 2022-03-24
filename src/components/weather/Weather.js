@@ -6,8 +6,8 @@ import './Weather.css';
 class Weather extends React.Component {
   render() {
     let weatherResults = this.props.weatherData.map((weather, index)=> {
-      console.log(index)
-      console.log(weather)
+      // console.log(index)
+      // console.log(weather)
       return (
         <WeatherInfo
         key={index}
@@ -21,7 +21,7 @@ class Weather extends React.Component {
       show={this.props.weatherModal}
       onClick={this.props.hideWeatherModal}
       >
-      <Modal.Header closeButton className="modal-head"> Three Day Forecast! </Modal.Header>
+      <Modal.Header closeButton className="modal-head"> Seven Day Forecast! </Modal.Header>
       <Modal.Body className='modal-body'onClick={this.props.hideWeatherModal}>
         {weatherResults}
       </Modal.Body>

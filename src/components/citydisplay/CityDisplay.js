@@ -8,6 +8,9 @@ class CityDisplay extends React.Component {
     console.log(this.props.city.display_name.split(',')[0])
     this.props.getWeather(this.props.city.display_name.split(',')[0])
   }
+  getMovies = () =>{
+    this.props.getMovies(this.props.city.display_name.split(',')[0])
+  }
   render() {
     let mapurl =`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${this.props.city.lat},${this.props.city.lon}&zoom=13`
     return(
@@ -20,6 +23,7 @@ class CityDisplay extends React.Component {
             <Card.Text>Latitude: {this.props.city.lat}</Card.Text>
           </Card.Body>
           <Button onClick={this.getWeather} className="search-button">Weather Forecast</Button>
+          <Button onClick={this.getMovies} className="search-button">Find Movies!</Button>
         </Card>
       </div>
     );

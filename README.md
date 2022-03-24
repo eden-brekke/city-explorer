@@ -26,6 +26,7 @@ Tai is the best :)
 ## Link to WRRCs
 ![WRRC 1](lab6WRRC.png)
 ![WRRC 2](22March2022_WRRC_withElla.png);
+![WRRC 3](23March2022_WRRCwithRyan.png);
 
 Name of feature: _____________Set up Repo/Create the file/Fill out README___________________
 
@@ -67,11 +68,23 @@ Actual time needed to complete: __40m__
 Name of Feature: _________Get Search Object to display____
 Estimate of time needed to complete: __1hr__
 Start Time: __4:50p__
-Finish Time: ____
-Actual Time needed to complete: ____
+Finish Time: __6:50__
+Actual Time needed to complete: __2hr__
 
 Name of Feature: ______Style it all___
 Estimate of time needed to complete: __2hr__
-Start Time: ____
-Finish Time: ____
-Actual Time Needed to Complete: ____
+Start Time: __6:50__
+Finish Time: __9:00__
+Actual Time Needed to Complete: __2hr__
+
+### Lab08
+
+Name of feature: ______________Everything__________________
+
+Estimate of time needed to complete: ___3hrs__
+
+Start time: __2:30pm___
+
+Finish time: __5:30pm___
+
+Actual time needed to complete: __3hrs___

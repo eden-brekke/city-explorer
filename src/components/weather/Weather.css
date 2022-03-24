@@ -5,7 +5,7 @@
 }
 
 .modal-head {
-  background-color: #F1C0E8;
+  background: linear-gradient(#f1d3ec, #c6eff3);
   font-weight: bold;
   text-align: center;
   justify-content: center;

@@ -3,19 +3,17 @@ import axios from 'axios';
 import SearchBar from '../searchbar/SearchBar';
 import Container from 'react-bootstrap/Container';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import Image from '../image/Image';
-// import Groups from '../groups/Groups';
 import './Main.css'
 import Errormodal from '../errormodal/Errormodal';
 import CityDisplay from '../citydisplay/CityDisplay';
 import Weather from '../weather/Weather';
+import Movie from '../movies/Movie';
 
 class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       query: '',
-      // searchResults: [],
       cityData: [],
       mapurl: '',
       error: false,
@@ -23,18 +21,16 @@ class Main extends React.Component {
       showModal: false,
       weatherData: ['sunny'],
       weatherModal: false,
-    }
-  }
-  hideWeatherModal = () => {
-    this.setState({
-      weatherModal: false,
-    })
-  }
-  
-  hideModal= () => {
+      movieData: [''],
+      movieModal: false,
+    };
+  };
+
+  hideModal = () => {
     this.setState({
       showModal: false,
       weatherModal: false,
+      movieModal: false,
     })
   }
   handleShowModal = () => {
@@ -42,6 +38,13 @@ class Main extends React.Component {
       showModal: true,
     })
   }
+
+  handleCityInput = (event) => {
+    this.setState({
+      query: event,
+    });
+  }
+
   getCityData = async (event) => {
     event.preventDefault();
 
@@ -50,7 +53,6 @@ class Main extends React.Component {
       let cityData = await axios.get(cityRequest);
       this.setState({
         cityData: cityData.data,
-        // searchResults: cityData.data,
       });
     } catch (error) {
       console.log('Error: ', error.response);
@@ -65,7 +67,6 @@ class Main extends React.Component {
   getWeather = async (city) => {
     try {
       let weatherRequestUrl = `${process.env.REACT_APP_SERVER}/weather?city=${city}`;
-      console.log(weatherRequestUrl);
       let weatherData = await axios.get(weatherRequestUrl);
       this.setState({
         weatherData: weatherData.data,
@@ -73,8 +74,7 @@ class Main extends React.Component {
       this.setState({
         weatherModal: true,
       })
-      console.log(weatherData);
-    }catch (error){
+    } catch (error) {
       console.log("Error response: ", error.response);
       this.setState({
         error: true,
@@ -84,59 +84,68 @@ class Main extends React.Component {
       console.log(this.state.errorMessage);
     }
   };
-  handleCityInput = (event) => {
-    this.setState({
-      query: event,
-    });
+
+  getMovies = async (city) => {
+    try {
+      let movieCall = `${process.env.REACT_APP_SERVER}/movies?city=${city}`;
+      let movieData = await axios.get(movieCall)
+      this.setState({
+        movieData: movieData.data,
+      })
+      this.setState({
+        movieModal: true,
+      })
+    } catch (error) {
+      this.setState({
+        error: true,
+        showModal: true,
+        errorMessage: `An error has been caught: ${error.response.status} ${error.response.statusText}`
+      });
+    }
   }
 
   render() {
     let cityResults = this.state.cityData.map((city, index) => {
-      // console.log(index)
-      return(
-      <CityDisplay 
-  
-      key={index}
-      city={city}
-      getWeather={this.getWeather}
-      />
+      return (
+        <CityDisplay
+
+          key={index}
+          city={city}
+          getWeather={this.getWeather}
+          getMovies={this.getMovies}
+        />
       );
     }
-  );
-  return (
+    );
+    return (
       <>
-      {this.state.error ? (
-        <p>{this.state.errorMessage}</p>
-      ) : (
-        <>
-        <Container style={{justifyContent: "center"}}>
+          <main>
+            {cityResults}
+          </main>
+        <Container style={{ justifyContent: "center" }}>
           <SearchBar handleCityInput={this.handleCityInput}
-          getCityData={this.getCityData} />
-        {/* <Container>
-          <Groups searchResults={this.state.searchResults}/>
-        </Container> */}
-       
+            getCityData={this.getCityData} />
         </Container>
         <Container>
           <Weather
-          weatherModal={this.state.weatherModal}
-          hideWeatherModal={this.hideModal}
-          weatherData={this.state.weatherData}
-          query={this.state.query}
+            weatherModal={this.state.weatherModal}
+            hideWeatherModal={this.hideModal}
+            weatherData={this.state.weatherData}
+            query={this.state.query}
+          />
+          <Movie
+            movieModal={this.state.movieModal}
+            hideMovieModal={this.hideModal}
+            movieData={this.state.movieData}
+          />
+          <Errormodal
+            error={this.state.error}
+            errorMessage={this.state.errorMessage}
+            modalState={this.state.showModal}
+            hideModal={this.hideModal}
+            showModal={this.handleShowModal}
           />
         </Container>
-        </>
-      )}
-      <main>
-        {cityResults}
-      </main>
-      <Errormodal 
-        error={this.state.error}
-        errorMessage={this.state.errorMessage}
-        modalState={this.state.showModal}
-        hideModal={this.hideModal}
-        showModal={this.handleShowModal}
-      />
       </>
     )
   }
