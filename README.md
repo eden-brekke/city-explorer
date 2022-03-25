@@ -30,6 +30,8 @@ Lab 07 <br>
 ![WRRC 2](22March2022_WRRC_withElla.png)
 Lab 08 <br>
 ![WRRC 3](23March2022WRRCwithRyan.png)
+Lab 09 <br>
+![WRRC 4](24March2022W_WRRCwithCole.png)
 
 Name of feature: _____________Set up Repo/Create the file/Fill out README___________________
 

@@ -1,13 +1,17 @@
+// Minimum
 import React from 'react';
 import axios from 'axios';
-import SearchBar from '../searchbar/SearchBar';
-import Container from 'react-bootstrap/Container';
+//Style
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from 'react-bootstrap/Container';
 import './Main.css'
+//Other Files
+import SearchBar from '../searchbar/SearchBar';
 import Errormodal from '../errormodal/Errormodal';
 import CityDisplay from '../citydisplay/CityDisplay';
 import Weather from '../weather/Weather';
 import Movie from '../movies/Movie';
+
 
 class Main extends React.Component {
   constructor(props) {
