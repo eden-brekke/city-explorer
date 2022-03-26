@@ -1,6 +1,6 @@
 import React from 'react';
 import '../header/Header.css'
-import './Movie.css'
+import '../movies/Movie.css'
 
 class Moviedata extends React.Component {
 
